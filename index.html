@@ -4251,11 +4251,8 @@ END:VCARD
       const subject = document.getElementById('contactSubject').value;
       const message = document.getElementById('contactMessage').value;
 
-      const mailtoUrl = `mailto:rpsavaniya11@gmail.com?subject=${encodeURIComponent('[Portfolio Inquiry] ' + subject + ' - ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + org + ')
-Email: ' + email + '
-
-Message:
-' + message)}`;
+      const bodyText = 'From: ' + name + ' (' + org + ')\nEmail: ' + email + '\n\nMessage:\n' + message;
+      const mailtoUrl = 'mailto:rpsavaniya11@gmail.com?subject=' + encodeURIComponent('[Portfolio Inquiry] ' + subject + ' - ' + name) + '&body=' + encodeURIComponent(bodyText);
       
       window.location.href = mailtoUrl;
       showToast('Opening default email client with your message...');
